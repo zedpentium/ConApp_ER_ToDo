@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConApp_ER_ToDo", "ConApp_ER_ToDo\ConApp_ER_ToDo.csproj", "{9E752212-248F-4C01-BBA1-CDAF785BFD81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConApp_ER_ToDo", "ConApp_ER_ToDo\ConApp_ER_ToDo.csproj", "{9E752212-248F-4C01-BBA1-CDAF785BFD81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConApp_ER_ToDo.Tests", "ConApp_ER_ToDo.Tests\ConApp_ER_ToDo.Tests.csproj", "{1CBE2052-9225-4391-82F8-AB5618FA48DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{9E752212-248F-4C01-BBA1-CDAF785BFD81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E752212-248F-4C01-BBA1-CDAF785BFD81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E752212-248F-4C01-BBA1-CDAF785BFD81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CBE2052-9225-4391-82F8-AB5618FA48DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CBE2052-9225-4391-82F8-AB5618FA48DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CBE2052-9225-4391-82F8-AB5618FA48DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CBE2052-9225-4391-82F8-AB5618FA48DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
