@@ -6,9 +6,10 @@ namespace ConApp_ER_ToDo.Model
 {
     public class Person
     {
-        static int idCounter;
+        static int idCounter = 0;
+        public static int Counter { get { return idCounter; } }
 
-        public int personIdnr;
+        public int pubPersonId;
 
         readonly int personId;
 
@@ -16,11 +17,39 @@ namespace ConApp_ER_ToDo.Model
         string lastName;
 
 
+        public string FirstName // properties with SET validation to not input Null/empty or ""
+        {
+            get { return firstName; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Null/Empty or only whitespace is not allowed.");
+                }
+
+                firstName = value;
+            }
+        }
+        public string LastName // properties with SET validation to not input Null/empty or ""
+        {
+            get { return lastName; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Null/Empty or only whitespace is not allowed.");
+                }
+
+                lastName = value;
+            }
+        }
+
+
         //, int personId
         //  PersonId = personId
         public Person(string firstName, string lastName)
         {
-            personIdnr = ++idCounter;
+            pubPersonId = ++idCounter;  // temporary a public int instead of the private int
             FirstName = firstName;
             LastName = lastName;
 
@@ -38,45 +67,20 @@ namespace ConApp_ER_ToDo.Model
 
 
 
-        public string FirstName
-        {
-            get { return firstName; }
-            set
-            {
-                if (string.IsNullOrWhiteSpace(value))
-                {
-                    throw new ArgumentException("Empty or only whitespace is not allowed.");
-                }
 
-                firstName = value;
-            }
-        }
-        public string LastName
-        {
-            get { return lastName; }
-            set
-            {
-                if (string.IsNullOrWhiteSpace(value))
-                {
-                    throw new ArgumentException("Empty or only whitespace is not allowed.");
-                }
+        //public int PersonId
+        //{
+        //    get { return personId; }
+        //    set
+        //    {
+        //        //if (string.IsNullOrWhiteSpace(value))
+        //        //{
+        //        //    throw new ArgumentException("Empty or only whitespace is not allowed.");
+        //        //}
 
-                lastName = value;
-            }
-        }
-        public int PersonId
-        {
-            get { return personIdnr; }
-            set
-            {
-                //if (string.IsNullOrWhiteSpace(value))
-                //{
-                //    throw new ArgumentException("Empty or only whitespace is not allowed.");
-                //}
-
-                personIdnr = value;
-            }
-        }
+        //        personId = value;
+        //    }
+        //}
 
 
 
