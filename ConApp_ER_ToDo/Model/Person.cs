@@ -7,14 +7,33 @@ namespace ConApp_ER_ToDo.Model
     public class Person
     {
         static int idCounter = 0;
+        
         public static int Counter { get { return idCounter; } }
 
-        public int pubPersonId;
 
-        readonly int personId;
+        private readonly int personId;
+        private string firstName;
+        private string lastName;
+        //private int personAssignedId;
 
-        string firstName;
-        string lastName;
+        public Person(string firstName, string lastName)
+        {
+            personId = ++idCounter;
+            FirstName = firstName;
+            LastName = lastName;
+        }
+
+        public int PersonId
+        {
+            get
+            {
+                return personId;
+            }
+            set
+            {
+                //personAssignedId = PersonId;
+            }
+        }
 
 
         public string FirstName // properties with SET validation to not input Null/empty or ""
@@ -44,43 +63,6 @@ namespace ConApp_ER_ToDo.Model
             }
         }
 
-
-        //, int personId
-        //  PersonId = personId
-        public Person(string firstName, string lastName)
-        {
-            pubPersonId = ++idCounter;  // temporary a public int instead of the private int
-            FirstName = firstName;
-            LastName = lastName;
-
-        }
-
-        //// A read-write instance property:
-        //public string Name
-        //{
-        //    get => _name;
-        //    set => _name = value;
-        //}
-
-        //// A read-only static property:
-        //public static int Counter => _counter;
-
-
-
-
-        //public int PersonId
-        //{
-        //    get { return personId; }
-        //    set
-        //    {
-        //        //if (string.IsNullOrWhiteSpace(value))
-        //        //{
-        //        //    throw new ArgumentException("Empty or only whitespace is not allowed.");
-        //        //}
-
-        //        personId = value;
-        //    }
-        //}
 
 
 

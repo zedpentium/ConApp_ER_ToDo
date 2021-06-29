@@ -7,29 +7,31 @@ namespace ConApp_ER_ToDo.Model
     public class ToDo
     {
 
-        public int PtodoId = 0;
         readonly int todoId;
         string description;
         bool done;
         Person assignee;
 
-
+        public ToDo(int todoIdCon, string descriptionCon) 
+        {
+ 
+            TodoId = todoIdCon; // Why? passes the value to getsetter class property, so u can set the private field & have input validation if needed
+            Description = descriptionCon;
+        }
 
         public int TodoId
         {
-            get { return PtodoId; } // temporary a public int instead of the private int
+            get
+            {
+                return todoId;
+            }
             set
             {
-                //if (string.IsNullOrWhiteSpace(value))
-                //{
-                //    throw new ArgumentException("Null/Empty or only whitespace is not allowed.");
-                //}
-
-                PtodoId = value; // temporary a public int instead of the private int
+                // blank coz cannot set readonly int todoId
             }
         }
 
-        public string Description  // properties with SET validation to not input Null/empty or ""
+        public string Description  
         {
             get { return description; }
             set
@@ -45,13 +47,7 @@ namespace ConApp_ER_ToDo.Model
 
 
 
-        public ToDo(int todoId, string description) // 
-        {
-            //todoId = ++PtodoId;
-            TodoId = todoId;
-            Description = description;
-        }
-
+ 
 
 
 

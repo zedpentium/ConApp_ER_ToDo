@@ -22,11 +22,11 @@ namespace ConApp_ER_ToDo.Model.Tests
             Person person2 = new Person(firstName2, lastName2);
 
             //Assert
-            Assert.NotEqual(person1.pubPersonId, person2.pubPersonId);
+            Assert.NotEqual(person1.PersonId, person2.PersonId);
             Assert.Equal(person2, person2);
             Assert.NotEqual(person1, person2);
 
-            //Console.WriteLine($"Output: {person1} { person2}" );
+
         }
 
 

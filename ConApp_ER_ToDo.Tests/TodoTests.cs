@@ -32,7 +32,6 @@ namespace ConApp_ER_ToDo.Model.Tests
             Assert.Equal(person3, person3);
             //Assert.NotEqual(person1, person2);
 
-            Console.WriteLine($"Output: {person1} { person2}" );
         }
 
 
