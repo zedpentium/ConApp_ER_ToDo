@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using Xunit;
 using ConApp_ER_ToDo.Data;
 
-namespace ConApp_ER_ToDo.Data.Tests
+namespace ConApp_ER_ToDo.Tests
 {
     public class PersonSequencerTests
     {
@@ -13,37 +12,20 @@ namespace ConApp_ER_ToDo.Data.Tests
         public void PersonSequencerClassTest()
         {
             //Arrange
-            PersonSequencer.NextPersonId(7);
+
 
             //Act
+            int personIDfirst = PersonSequencer.NextPersonId();
+            int personIDsecond = PersonSequencer.NextPersonId();
+            int personIDthird = PersonSequencer.NextPersonId();
 
             //Assert
-            Assert.Equal(8, PersonSequencer.PersonId);
+            Assert.Equal(1, personIDfirst);
+            Assert.Equal(2, personIDsecond);
+            Assert.Equal(3, personIDthird);
+            Assert.Equal(0, personIDfirst);
 
         }
-
-        [Fact]
-        public void PersonIdTest()
-        {
-            //Arrange
-            PersonSequencer.NextPersonId(3);
-
-            //Act
-            PersonSequencer.Reset();
-
-
-            //Assert
-
-            
-            Assert.Equal(0, PersonSequencer.PersonId);
-            
-
-        }
-
-
-
-
-
 
 
 

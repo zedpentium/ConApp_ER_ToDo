@@ -1,8 +1,8 @@
-using ConApp_ER_ToDo.Model;
 using System;
 using Xunit;
+using ConApp_ER_ToDo.Model;
 
-namespace ConApp_ER_ToDo.Model.Tests
+namespace ConApp_ER_ToDo.Tests
 {
     public class PersonTests
     {
@@ -12,38 +12,23 @@ namespace ConApp_ER_ToDo.Model.Tests
         public void PersonClassTest()
         {
             //Arrange
-            string firstName = "Kent";
-            string lastName = "Svensson";
-            string firstName2 = "Test";
-            string lastName2 = "Testsson";
+            string firstName = "Eric";
+            string lastName = "Rönnhult";
+            string firstName2 = "Tomas";
+            string lastName2 = "Lindberg";
 
             //Act
-            Person person1 = new Person(firstName, lastName);
-            Person person2 = new Person(firstName2, lastName2);
+            Person person1 = new Person(firstName, lastName, 1);
+            Person person2 = new Person(firstName2, lastName2, 2);
 
             //Assert
-            Assert.NotEqual(person1.PersonId, person2.PersonId);
+            //Assert.NotEqual(person1.PersonId, person2.PersonId);
             Assert.Equal(person2, person2);
             Assert.NotEqual(person1, person2);
-
+            Assert.NotEqual(2, person1.PersonId);
 
         }
 
-
-        [Fact]
-        public void Testsomething()
-        {
-
-            //arrange
-
-
-
-            //act
-
-
-
-            //assert
-        }
 
 
     }

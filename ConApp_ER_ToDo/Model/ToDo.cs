@@ -7,41 +7,34 @@ namespace ConApp_ER_ToDo.Model
     public class ToDo
     {
 
-        readonly int todoId;
-        string description;
-        bool done;
-        Person assignee;
+        readonly int _todoid;
+        string _description;
+        bool _done;
+        Person _assignee;
 
-        public ToDo(int todoIdCon, string descriptionCon) 
+        public ToDo(int todoid, string description) 
         {
  
-            TodoId = todoIdCon; // Why? passes the value to getsetter class property, so u can set the private field & have input validation if needed
-            Description = descriptionCon;
+            this._todoid = todoid; // Why? u can only set a readonly in constructor
+            Description = description;
         }
 
-        public int TodoId
+        public int ToDoId
         {
-            get
-            {
-                return todoId;
-            }
-            set
-            {
-                // blank coz cannot set readonly int todoId
-            }
+            get { return _todoid; }
         }
 
         public string Description  
         {
-            get { return description; }
+            get { return _description; }
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("Null/Empty or only whitespace is not allowed.");
+                    throw new ArgumentException("The in-value are Null/Empty or whitespace. Will not be stored.");
                 }
 
-                description = value;
+                _description = value;
             }
         }
 

@@ -7,40 +7,22 @@ namespace ConApp_ER_ToDo.Data
     public class PersonSequencer
     {
 
-        private static int personId;
-
-        public PersonSequencer(int personId)
-        {
-            PersonId = personId;
-        }
-
-        public static int PersonId
-            {
-            get
-                {
-                    return personId;
-                }
-            set
-                {
-                    personId = value;
-                }
-            }
+        private static int _personId = 0;
 
 
-
-        public static int NextPersonId(int personIdNext)
+        public static int NextPersonId()
             {
 
-            PersonId = ++personIdNext;
+            _personId = _personId + 1;
 
-            return PersonId;
+            return _personId;
             }
 
 
 
         public static void Reset()
         {
-            PersonId = 0;
+            _personId = 0;
         }
 
 

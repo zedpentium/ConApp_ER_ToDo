@@ -1,8 +1,8 @@
-using ConApp_ER_ToDo.Model;
 using System;
 using Xunit;
+using ConApp_ER_ToDo.Model;
 
-namespace ConApp_ER_ToDo.Model.Tests
+namespace ConApp_ER_ToDo.Tests
 {
     public class ToDoTests
     {
@@ -12,13 +12,9 @@ namespace ConApp_ER_ToDo.Model.Tests
         public void ToDoClassTest()
         {
             //Arrange
-            //string firstName = "Kent";
-            //string lastName = "Svensson";
-            //int todoId = ToDo.PtodoId;
-
-            string description = "First Person";
-            string description2 = "Second Person";
-            string description3 = "3rd Person";
+            string description = "First Person duties";
+            string description2 = "Second Person stuff to do";
+            string description3 = "3rd Persons schedule";
 
             //Act
             ToDo person1 = new ToDo(3, description);
@@ -26,29 +22,17 @@ namespace ConApp_ER_ToDo.Model.Tests
             ToDo person3 = new ToDo(9, description3);
 
             //Assert
-            //Assert.NotEqual(person1.personIdnr, person2.personIdnr);
-            Assert.Equal(person1, person1);
-            Assert.Equal(person2, person2);
-            Assert.Equal(person3, person3);
-            //Assert.NotEqual(person1, person2);
+            Assert.Equal(person1.Description, person1.Description);
+            Assert.Equal(person2.Description, person2.Description);
+            Assert.Equal(person3.Description, person3.Description);
+            Assert.NotEqual(person3.Description, person2.Description);
+            Assert.NotEqual(person1.ToDoId, person2.ToDoId);
+            Assert.NotEqual(person2.ToDoId, person3.ToDoId);
+            Assert.Equal(person3.ToDoId, person3.ToDoId);
 
         }
 
 
-        [Fact]
-        public void Testsomething()
-        {
-
-            //arrange
-
-
-
-            //act
-
-
-
-            //assert
-        }
 
 
     }

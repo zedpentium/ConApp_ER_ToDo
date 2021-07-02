@@ -7,7 +7,7 @@ namespace ConApp_ER_ToDo.Data
     public class TodoSequencer
     {
 
-        private static int personId;
+        private static int _personId;
 
         public TodoSequencer(int personId)
         {
@@ -18,11 +18,11 @@ namespace ConApp_ER_ToDo.Data
             {
             get
                 {
-                    return personId;
+                    return _personId;
                 }
             set
                 {
-                    personId = value;
+                _personId = value;
                 }
             }
 
