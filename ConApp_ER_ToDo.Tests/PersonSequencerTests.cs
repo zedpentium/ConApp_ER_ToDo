@@ -12,7 +12,7 @@ namespace ConApp_ER_ToDo.Tests
         public void PersonSequencerClassTest()
         {
             //Arrange
-
+            PersonSequencer.Reset();
 
             //Act
             int personIDfirst = PersonSequencer.NextPersonId();
@@ -23,7 +23,7 @@ namespace ConApp_ER_ToDo.Tests
             Assert.Equal(1, personIDfirst);
             Assert.Equal(2, personIDsecond);
             Assert.Equal(3, personIDthird);
-            Assert.Equal(0, personIDfirst);
+            Assert.NotEqual(0, personIDfirst);
 
         }
 

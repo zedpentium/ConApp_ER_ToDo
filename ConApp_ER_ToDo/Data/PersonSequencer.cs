@@ -7,7 +7,7 @@ namespace ConApp_ER_ToDo.Data
     public class PersonSequencer
     {
 
-        private static int _personId = 0;
+        private static int _personId;
 
 
         public static int NextPersonId()

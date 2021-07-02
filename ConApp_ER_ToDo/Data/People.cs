@@ -19,15 +19,19 @@ namespace ConApp_ER_ToDo.Data
         public Person[] FindAll()
         {
 
-            Person[] allPersonsFromPeepsArray = new Person[0];
+            /*Person[] allPersonsFromPeepsArray = new Person[0];
             Array.Resize(ref allPersonsFromPeepsArray, Size());
 
             for (int i = 0; i < Size(); i++)
             {
                 allPersonsFromPeepsArray[i] = arrOfPersonObjects[i];
             }
+            */
+            //return allPersonsFromPeepsArray;
+            // My first code above, commented out. Coz i realized i can just return the actual arrOfPersonObject instead
+            // and did all the above code for nothing.
 
-            return allPersonsFromPeepsArray;
+            return arrOfPersonObjects;
         } 
 
 
