@@ -7,7 +7,7 @@ namespace ConApp_ER_ToDo.Data
     public class TodoSequencer
     {
 
-        private static int _todoid;
+        private static int _todoid; // i have underscore on theese private fields, to differentiante them visually
 
 
         public static int NextToDoId()

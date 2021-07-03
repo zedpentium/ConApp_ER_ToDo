@@ -7,7 +7,7 @@ namespace ConApp_ER_ToDo.Data
     public class PersonSequencer
     {
 
-        private static int _personId;
+        private static int _personId; // i have underscore on theese private fields, to differentiante them visually
 
 
         public static int NextPersonId()

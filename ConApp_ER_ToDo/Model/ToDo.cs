@@ -7,7 +7,7 @@ namespace ConApp_ER_ToDo.Model
     public class ToDo
     {
 
-        readonly int _todoid;
+        readonly int _todoid; // i have underscore on theese private fields, to differentiante them visually
         string _description;
         bool _done;
         Person _assignee;
@@ -17,6 +17,7 @@ namespace ConApp_ER_ToDo.Model
  
             this._todoid = todoid; // Why? u can only set a readonly in constructor
             Description = description;
+
         }
 
         public int ToDoId
@@ -38,9 +39,20 @@ namespace ConApp_ER_ToDo.Model
             }
         }
 
+        public bool Done
+        {
+            get { return _done; }
+            set { _done = value;}
+        }
+
+        public Person Assignee
+        {
+            get { return _assignee; }
+            set { _assignee = value;}
+        }
 
 
- 
+
 
 
 

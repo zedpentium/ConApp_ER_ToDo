@@ -9,7 +9,7 @@ namespace ConApp_ER_ToDo
     public class Person
     {
 
-        private readonly int _personId;
+        private readonly int _personId;  // i have underscore on theese private fields, to differentiante them visually
         private string _firstName;
         private string _lastName;
 

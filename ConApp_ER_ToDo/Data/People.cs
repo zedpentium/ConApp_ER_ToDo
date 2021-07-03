@@ -8,12 +8,12 @@ namespace ConApp_ER_ToDo.Data
     public class People
     {
 
-        private static Person[] arrOfPersonObjects = new Person[0];
+        private static Person[] _arrOfPersonObjects = new Person[0]; // i have underscore on this private object array, to differentiante them visually
 
 
         public int Size()
         {
-            return arrOfPersonObjects.Length;
+            return _arrOfPersonObjects.Length;
         }
 
         public Person[] FindAll()
@@ -31,13 +31,13 @@ namespace ConApp_ER_ToDo.Data
             // My first code above, commented out. Coz i realized i can just return the actual arrOfPersonObject instead
             // and did all the above code for nothing.
 
-            return arrOfPersonObjects;
+            return _arrOfPersonObjects;
         } 
 
 
         public Person FindById(int personId)
         { 
-            Person foundObjectIndex = Array.Find(arrOfPersonObjects, idNr => idNr.PersonId == personId);
+            Person foundObjectIndex = Array.Find(_arrOfPersonObjects, idNr => idNr.PersonId == personId);
 
             return foundObjectIndex;
         }
@@ -60,9 +60,9 @@ namespace ConApp_ER_ToDo.Data
         {
             Person newPersonInfo = new Person(firstName, lastName, PersonSequencer.NextPersonId());
 
-            Array.Resize(ref arrOfPersonObjects, 1 + Size()); // adding 1 more element to array to make room for the newPersonInfo object
+            Array.Resize(ref _arrOfPersonObjects, 1 + Size()); // adding 1 more element to array to make room for the newPersonInfo object
 
-            arrOfPersonObjects[Size() - 1] = newPersonInfo;
+            _arrOfPersonObjects[Size() - 1] = newPersonInfo;
 
             return newPersonInfo;
 
@@ -71,7 +71,7 @@ namespace ConApp_ER_ToDo.Data
 
         public void Clear()
         {
-            Array.Resize(ref arrOfPersonObjects, 0);
+            Array.Resize(ref _arrOfPersonObjects, 0);
             PersonSequencer.Reset();
         }
 
