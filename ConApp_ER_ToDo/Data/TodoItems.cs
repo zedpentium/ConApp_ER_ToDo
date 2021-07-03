@@ -81,14 +81,38 @@ namespace ConApp_ER_ToDo.Data
         }
 
 
+        public ToDo[] RemoveOneToDoItemRebuildArray(ToDo removeThisToDoItem)
+        {
+            //ToDo[] toDoItemIndexRemove = Array.FindAll(_arrOfTodoObjects, idNr => idNr != removeThisToDoItem);
+            //_arrOfTodoObjects = toDoItemIndexRemove;  
+            // efficient code above here, but not correct according to instructions.
+            // According to instructions, i must find index, and then exclude it, when rebuilding array
+            // so here is that, in the code below /ER
+
+            ToDo[] beforeCopyArray = new ToDo[_arrOfTodoObjects.Length];
+
+            int toDoItemIndexRemove = Array.FindIndex(_arrOfTodoObjects, idNr => idNr == removeThisToDoItem);
+
+            _arrOfTodoObjects.CopyTo(beforeCopyArray, 0);
+
+            _arrOfTodoObjects[toDoItemIndexRemove] = null;
+
+            _arrOfTodoObjects = Array.FindAll(_arrOfTodoObjects, idNr => idNr != null);
+
+            return beforeCopyArray; // this is returning a separate Array BEFORE 1 object was removed in _arrOfTodoObjects
+                                    // to compare this BEFORE, with AFTER removal in x Unit test.
+
+        }
+
+
 
         // Method below is for x unit testing, To store objects i update in testing, and need to store in _arrOfTodoObjects array
         // to be able to search for set things in the objects in the array and get them
 
         public void StoreUppdatedObject(ToDo updatedToDoObject, int inputToDoId) 
         {
-            int PersonObjIndex = Array.FindIndex(_arrOfTodoObjects, idNr => idNr.ToDoId == inputToDoId);
-            _arrOfTodoObjects[PersonObjIndex] = updatedToDoObject;
+            int toDoItemIndex = Array.FindIndex(_arrOfTodoObjects, idNr => idNr.ToDoId == inputToDoId);
+            _arrOfTodoObjects[toDoItemIndex] = updatedToDoObject;
 
         }
 

@@ -22,6 +22,8 @@ namespace ConApp_ER_ToDo.Data
 
         public static void ToDoReset()
         {
+            TodoItems doAnClear = new TodoItems();
+            doAnClear.Clear();
             _todoid = 0;
         }
 

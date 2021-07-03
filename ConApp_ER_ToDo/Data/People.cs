@@ -75,8 +75,24 @@ namespace ConApp_ER_ToDo.Data
             PersonSequencer.Reset();
         }
 
-        
 
+        public Person[] RemoveOneToDoItemRebuildArray(Person removeThisPerson)
+        {
+
+            Person[] beforeCopyArray = new Person[_arrOfPersonObjects.Length];
+
+            int toDoItemIndexRemove = Array.FindIndex(_arrOfPersonObjects, idNr => idNr == removeThisPerson);
+
+            _arrOfPersonObjects.CopyTo(beforeCopyArray, 0);
+
+            _arrOfPersonObjects[toDoItemIndexRemove] = null;
+
+            _arrOfPersonObjects = Array.FindAll(_arrOfPersonObjects, idNr => idNr != null);
+
+            return beforeCopyArray; // this is returning a separate Array BEFORE 1 object was removed in _arrOfTodoObjects
+                                    // to compare this BEFORE, with AFTER removal in x Unit test.
+
+        }
 
 
 
