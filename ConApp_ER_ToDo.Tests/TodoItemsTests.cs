@@ -108,10 +108,13 @@ namespace ConApp_ER_ToDo.Tests
             iToDoItemC.Done = true;
             iToDoItemD.Done = false;
 
-            testToDo.StoreUppdatedObject(iToDoItemA, iToDoItemA.ToDoId);
+            // UPDATE 2021-07-05 kl 10:12 - The store is NOT nedded, coz the object is a reference
+            // and the uppdates reflects object in array directly. /ER
+            /*testToDo.StoreUppdatedObject(iToDoItemA, iToDoItemA.ToDoId);
             testToDo.StoreUppdatedObject(iToDoItemB, iToDoItemB.ToDoId);
             testToDo.StoreUppdatedObject(iToDoItemC, iToDoItemC.ToDoId);
             testToDo.StoreUppdatedObject(iToDoItemD, iToDoItemD.ToDoId);
+            */
 
 
             ToDo[] foundAllUpdatedAfter = testToDo.FindAllToDoItems(); // After test

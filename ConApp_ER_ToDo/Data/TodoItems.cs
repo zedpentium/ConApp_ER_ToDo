@@ -106,15 +106,18 @@ namespace ConApp_ER_ToDo.Data
 
 
 
+        // UPDATE 2021-07-05 - 10:12 - The object IS referenced. SO all objects i update, WILL update in array,
+        // coz there IS only 1 object, and its referenced when using fields or prop to update info! ;)
         // Method below is for x unit testing, To store objects i update in testing, and need to store in _arrOfTodoObjects array
         // to be able to search for set things in the objects in the array and get them
 
-        public void StoreUppdatedObject(ToDo updatedToDoObject, int inputToDoId) 
+        /*public void StoreUppdatedObject(ToDo updatedToDoObject, int inputToDoId) 
         {
             int toDoItemIndex = Array.FindIndex(_arrOfTodoObjects, idNr => idNr.ToDoId == inputToDoId);
             _arrOfTodoObjects[toDoItemIndex] = updatedToDoObject;
 
         }
+        */
 
 
 
