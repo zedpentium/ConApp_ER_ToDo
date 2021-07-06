@@ -24,7 +24,7 @@ namespace ConApp_ER_ToDo.Tests
 
 
             //Act
-            testToDo.Clear();
+            TodoItems.Clear();
 
             ToDo iToDoItemA = testToDo.CreateNewTodoToArray(descriptionA);
             ToDo iToDoItemB = testToDo.CreateNewTodoToArray(descriptionB);
@@ -84,7 +84,7 @@ namespace ConApp_ER_ToDo.Tests
 
 
             //Act
-            testToDo.Clear();
+            TodoItems.Clear();
 
             Person iPersonA = testPeople.CreateNewPersonToArray(firstNameA, lastNameA);
             Person iPersonB = testPeople.CreateNewPersonToArray(firstNameB, lastNameB);
@@ -142,13 +142,14 @@ namespace ConApp_ER_ToDo.Tests
 
             Assert.NotEqual(foundAssigneeB, foundAssigneeA);
 
-            Assert.NotNull(foundUnassItems);
+            Assert.NotNull(foundUnassItems); // Change it to Assert.Null, to get error & show content of what it found
 
         }
 
 
         [Fact]
-        public void TodoItemsClassTestingStep11()  // testing to remove a TodoItems-object from TodoItems-array,
+        public void TodoItemsClassTestingStep11()  // Behind the scene, the array gets copied, for a before & after comparision.
+                                                   // Testing to remove a TodoItems-object from TodoItems-array,
                                                    // by finding array-index of that object.
                                                    // Then rebuild and resize TodoItems-array excluding that
                                                    // object on the found index. Going from 4 to 3 objects in this test.

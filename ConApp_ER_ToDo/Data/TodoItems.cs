@@ -42,7 +42,7 @@ namespace ConApp_ER_ToDo.Data
         }
 
 
-        public void Clear()
+        public static void Clear()
         {
             Array.Resize(ref _arrOfTodoObjects, 0);
             PersonSequencer.Reset();
@@ -60,8 +60,7 @@ namespace ConApp_ER_ToDo.Data
 
         public ToDo[] FindByAssignee(int personId)
         {
-            ToDo[] thePersonsWithAssignee = Array.FindAll(_arrOfTodoObjects, idNr => idNr.Assignee != null );
-            ToDo[] foundBypersonId = Array.FindAll(thePersonsWithAssignee, idNr => idNr.Assignee.PersonId == personId);
+            ToDo[] foundBypersonId = Array.FindAll(_arrOfTodoObjects, idNr => idNr.Assignee != null && idNr.Assignee.PersonId == personId);
 
             return foundBypersonId;
         }
